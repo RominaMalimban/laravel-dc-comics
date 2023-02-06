@@ -21,6 +21,9 @@
                         <td>{{$person -> lastName}}</td>
                         <td>{{$person -> dateOfBirth}}</td>
                         <td>{{$person -> heigth}} cm</td>
+                        <td>
+                            <a href="{{route('delete.person', $person)}}"><i class="fa-solid fa-trash"></i></a>
+                        </td>
                     </tr>
                 @endforeach
                 </tr>

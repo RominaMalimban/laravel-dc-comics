@@ -10,3 +10,7 @@ Route::get('/', [MainController::class, 'home'])
 // ROTTA SHOW:
 Route::get('/person/show/{person}', [MainController::class, 'showPerson'])
     ->name('show.person');
+
+// ROTTA DELETE:
+Route::get('/person/delete/{person}', [MainController::class, 'deletePerson'])
+    ->name('delete.person');
