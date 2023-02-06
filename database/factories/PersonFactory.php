@@ -20,7 +20,7 @@ class PersonFactory extends Factory
             'firstName' => fake()-> firstname(),
             'lastName' => fake()-> lastname(),
             'dateOfBirth' => fake()->dateTimeAD(),
-            'heigth'=> fake()-> numberBetween(0, 300),
+            'heigth'=> fake()-> numberBetween(0, 200),
         ];
     }
 }
