@@ -56,5 +56,26 @@ class MainController extends Controller
 
 	    return redirect() -> route('home');
     }
+
+    // METODO PER RITORNARE FORM CON VECCHI DATI:
+    public function editPerson(Person $person){
+
+        return view('pages.editPerson', compact('person'));
+    }
+
+    // METODO PER RICEZIONE DATI VECCHI DAL FORM:
+    public function personUpdate(Request $request, Person $person){
+        
+        $data = $request->all();
+
+        $person -> firstName = $data['firstName'];
+        $person -> lastName = $data['lastName'];
+        $person -> dateOfBirth = $data['dateOfBirth'];
+        $person -> height = $data['height'];
+
+	    $person -> save();
+
+	    return redirect() -> route('home');
+    }
 }
 

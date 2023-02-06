@@ -32,6 +32,9 @@
                         <td>
                             <a href="{{route('delete.person', $person)}}"><i class="fa-solid fa-trash"></i></a>
                         </td>
+                        <td>
+                            <a href="{{route('edit.person', $person)}}">EDIT</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tr>
