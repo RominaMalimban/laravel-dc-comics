@@ -14,7 +14,10 @@
                 
                 @foreach ($persons as $person)
                     <tr>
-                        <td>{{$person -> firstName}}</td>
+                        
+                        <td>
+                            <a href="{{route ('show.person', $person)}}">{{$person -> firstName}}</a>
+                        </td>
                         <td>{{$person -> lastName}}</td>
                         <td>{{$person -> dateOfBirth}}</td>
                         <td>{{$person -> heigth}} cm</td>

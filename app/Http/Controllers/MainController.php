@@ -13,4 +13,10 @@ class MainController extends Controller
       
         return view('pages.home', compact ('persons'));
     }
+
+    // METODO SHOW:
+    public function showPerson(Person $person){
+
+        return view('pages.showPerson', compact('person'));
+    }
 }
