@@ -19,8 +19,8 @@ class PersonFactory extends Factory
         return [
             'firstName' => fake()-> firstname(),
             'lastName' => fake()-> lastname(),
-            'dateOfBirth' => fake()->dateTimeAD(),
-            'height'=> fake()-> numberBetween(0, 200),
+            'dateOfBirth' => fake()->dateTime(),
+            'height'=> fake()-> numberBetween(130, 200),
         ];
     }
 }

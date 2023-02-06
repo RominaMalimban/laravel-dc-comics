@@ -41,7 +41,7 @@ class MainController extends Controller
         //     'firstName' => 'required|string|max:32',
         //     'lastName' => 'required|string|max:32',
         //     'dateOfBirth'=> 'required|date',
-        //     'height' => 'nullable|integer|min:0|max:200'
+        //     'height' => 'nullable|integer|min:130|max:200'
         // ]);
         $data = $request->all();
 
