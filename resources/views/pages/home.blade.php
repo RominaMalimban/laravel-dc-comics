@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+
+        <h3>
+            <a href="{{route('create.person')}}">Register a new user</a>
+        </h3>
+
         <table class="table">
             <thead>
                 <th>Name</th>
@@ -15,12 +20,15 @@
                 @foreach ($persons as $person)
                     <tr>
                         
+                        {{-- ROTTA CON DETTAGLI PERSONA --}}
                         <td>
                             <a href="{{route ('show.person', $person)}}">{{$person -> firstName}}</a>
                         </td>
                         <td>{{$person -> lastName}}</td>
                         <td>{{$person -> dateOfBirth}}</td>
-                        <td>{{$person -> heigth}} cm</td>
+                        <td>{{$person -> height}} cm</td>
+
+                        {{-- ROTTA PER ELIMINAZIONE PERSONA --}}
                         <td>
                             <a href="{{route('delete.person', $person)}}"><i class="fa-solid fa-trash"></i></a>
                         </td>

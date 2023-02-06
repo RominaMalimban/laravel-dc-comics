@@ -9,7 +9,7 @@ class MainController extends Controller
     // METODO HOME:
     public function home(){
 
-        $persons = Person::all();
+        $persons = Person::orderby('created_at', 'DESC')->get();
       
         return view('pages.home', compact ('persons'));
     }
@@ -27,4 +27,34 @@ class MainController extends Controller
 
         return redirect()->route('home');
     }
+
+    // METODO CHE MI RITORNA IL FORM:
+    public function createNewPerson(){
+        return view('pages.createPerson');
+    }
+
+    // METODO PER RICEZIONE DATI FORM:
+    public function personStore(Request $request){
+
+        // validazione:
+        // $data = $request->validate([
+        //     'firstName' => 'required|string|max:32',
+        //     'lastName' => 'required|string|max:32',
+        //     'dateOfBirth'=> 'required|date',
+        //     'height' => 'nullable|integer|min:0|max:200'
+        // ]);
+        $data = $request->all();
+
+        $person = new Person();
+
+        $person -> firstName = $data['firstName'];
+        $person -> lastName = $data['lastName'];
+        $person -> dateOfBirth = $data['dateOfBirth'];
+        $person -> height = $data['height'];
+
+	    $person -> save();
+
+	    return redirect() -> route('home');
+    }
 }
+
